@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-09T07:04:54.417Z</updated>
+  <updated>2018-06-08T15:59:21.994Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,24 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2018/06/09/Liunx-Python/"/>
-    <id>http://yoursite.com/2018/06/09/Liunx-Python/</id>
-    <published>2018-06-09T07:04:54.419Z</published>
-    <updated>2018-06-09T07:04:54.417Z</updated>
-    
-    <content type="html"><![CDATA[<p>title: Liunx-Python<br>layout: post<br>date: 2018-06-06 11:58:19<br>comments: flase<br>categories: Blog<br>tags:<br>keywords: Hexo, Blog, GitHub<br>description: 在Centos7上搭建python（2+3）环境</p><a id="more"></a><p>Liunx+Python（2+3）部署</p><p>liunx系统自带python2版本，本文：</p><p>1、补充python3版本的部署</p><p>2、python2和python3版本共存及使用</p><p>一、Python3部署</p><p>1、安装软件依赖包</p><pre><code>yum install openssl-devel bzip2-devel expat-devel gdbm-devel readline-devel sqlite-devel</code></pre><p>2、上传python3源码包到指定目录，并解压–&gt;进入解压后的目录</p><pre><code>mkdir /home/installpackpage     #在home目录下创建指定目录，用于存放安装包cd    /home/installpackpage     #进入安装包存放目录tar   -zxvf   Python-3.6.2.tgz  #解压安装包cd    Python-3.6.2                #进入解压后的python3源码目录</code></pre><p>3、编译python3源码</p><pre><code>./configure -prefix=/usr/local/python3 #在源码目录内，执行源码预编译操作，且指定安装python3的路径sudo make &amp;&amp; make install              #执行编译且编译安装操作，&amp;&amp;代表且，执行一个继续下一个                                       #sudo命令临时获取root权限，root用户执行安装不需要@ Successfully installed pip-9.0.1 setuptools-28.8.0 #成功后的提示</code></pre><p>二、Python（2+3）部署</p><p>4、给python3及pip3创建软连接</p><pre><code>ln -s /usr/local/python3/bin/python3 /usr/bin/python3 #为python3创建软连接ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3       #为pip3创建软连接**注意：创建软连接的目的在于让系统可以找到直接调用python3和pip3的位置****       创建软连接必须使用绝对路径                                ****       pip模块是python的模块管理工具，方便安装模块                 **pip3 -V         #查看pip3的版本及对应的python版本#pip 9.0.1 from /usr/local/python3/lib/python3.6/site-packages (python 3.6)pip install bs4 #pip3针对python3安装第三方库#beautifulSoup 是python支持的一个第三方的包,作用就是用来解析html网页,提取数据</code></pre><p>5、给python2添加pip功能</p><pre><code>yum -y install epel-release #为python2安装扩展源yum install python-pip        #为python2安装pip</code></pre><p>6、python初体验</p><pre><code>@python（2+3）：* pip  ---&gt;python   #python2版本* pip3 ---&gt;python3  #python3版本@python目录介绍：* bin          #执行目录* include     #python的库文件* lib         #一些python模块的源码* share          #帮助文档，开源协议</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;title: Liunx-Python&lt;br&gt;layout: post&lt;br&gt;date: 2018-06-06 11:58:19&lt;br&gt;comments: flase&lt;br&gt;categories: Blog&lt;br&gt;tags:&lt;br&gt;keywords: Hexo, Blog, GitHub&lt;br&gt;description: 在Centos7上搭建python（2+3）环境&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Welcome My Blog</title>
@@ -46,6 +28,26 @@
     <summary type="html">
     
       学习笔记及心得记录，路漫漫与君共勉
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://yoursite.com/categories/Blog/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Liunx-Python</title>
+    <link href="http://yoursite.com/2018/06/06/Liunx-Python/"/>
+    <id>http://yoursite.com/2018/06/06/Liunx-Python/</id>
+    <published>2018-06-06T03:58:19.000Z</published>
+    <updated>2018-06-09T07:07:41.469Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><p>Liunx+Python（2+3）部署</p><p>liunx系统自带python2版本，本文：</p><p>1、补充python3版本的部署</p><p>2、python2和python3版本共存及使用</p><p>一、Python3部署</p><p>1、安装软件依赖包</p><pre><code>yum install openssl-devel bzip2-devel expat-devel gdbm-devel readline-devel sqlite-devel</code></pre><p>2、上传python3源码包到指定目录，并解压–&gt;进入解压后的目录</p><pre><code>mkdir /home/installpackpage     #在home目录下创建指定目录，用于存放安装包cd    /home/installpackpage     #进入安装包存放目录tar   -zxvf   Python-3.6.2.tgz  #解压安装包cd    Python-3.6.2                #进入解压后的python3源码目录</code></pre><p>3、编译python3源码</p><pre><code>./configure -prefix=/usr/local/python3 #在源码目录内，执行源码预编译操作，且指定安装python3的路径sudo make &amp;&amp; make install              #执行编译且编译安装操作，&amp;&amp;代表且，执行一个继续下一个                                       #sudo命令临时获取root权限，root用户执行安装不需要@ Successfully installed pip-9.0.1 setuptools-28.8.0 #成功后的提示</code></pre><p>二、Python（2+3）部署</p><p>4、给python3及pip3创建软连接</p><pre><code>ln -s /usr/local/python3/bin/python3 /usr/bin/python3 #为python3创建软连接ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3       #为pip3创建软连接**注意：创建软连接的目的在于让系统可以找到直接调用python3和pip3的位置****       创建软连接必须使用绝对路径                                ****       pip模块是python的模块管理工具，方便安装模块                 **pip3 -V         #查看pip3的版本及对应的python版本#pip 9.0.1 from /usr/local/python3/lib/python3.6/site-packages (python 3.6)pip install bs4 #pip3针对python3安装第三方库#beautifulSoup 是python支持的一个第三方的包,作用就是用来解析html网页,提取数据</code></pre><p>5、给python2添加pip功能</p><pre><code>yum -y install epel-release #为python2安装扩展源yum install python-pip        #为python2安装pip</code></pre><p>6、python初体验</p><pre><code>@python（2+3）：* pip  ---&gt;python   #python2版本* pip3 ---&gt;python3  #python3版本@python目录介绍：* bin          #执行目录* include     #python的库文件* lib         #一些python模块的源码* share          #帮助文档，开源协议</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      在Centos7上搭建python（2+3）环境
     
     </summary>
     
